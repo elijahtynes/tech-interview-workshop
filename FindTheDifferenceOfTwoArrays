@@ -1,0 +1,56 @@
+class Solution {
+    public List<List<Integer>> findDifference(int[] nums1, int[] nums2) {
+        // Inner lists
+        List<Integer> firstSet = new ArrayList<Integer>();
+        List<Integer> secondSet = new ArrayList<Integer>();
+        
+        // Stacks to track distinct values
+        Stack firstSetValues = new Stack();
+        Stack secondSetValues = new Stack();
+
+        // Solution list
+        List<List<Integer>> answer = new ArrayList<List<Integer>>();
+
+        // Determine if a distinct integer has been found
+        boolean notDistinct = false;
+        
+        // Try to find a distinct element
+        for (int i = 0; i < nums1.length; i++) {
+            for (int k = 0; k < nums2.length; k++) {
+                if (nums1[i] == nums2[k]) {
+                    notDistinct = true;
+                }
+            }
+            if (notDistinct == false) {
+                // Add to stack and inner array if not already in stack (prevents duplicates)
+                if (firstSetValues.search(nums1[i]) == -1) {
+                    firstSetValues.push(nums1[i]);
+                    firstSet.add(nums1[i]);
+                }
+            }
+            notDistinct = false;
+        }
+
+        // Try to find a distinct element
+        for (int y = 0; y < nums2.length; y++) {
+            for (int z = 0; z < nums1.length; z++) {
+                if (nums2[y] == nums1[z]) {
+                    notDistinct = true;
+                }
+            }
+            if (notDistinct == false) {
+                if (secondSetValues.search(nums2[y]) == -1) {
+                    secondSetValues.push(nums2[y]);
+                    secondSet.add(nums2[y]);
+                }
+            }
+            notDistinct = false;
+        }
+
+        // Add inner lists to list of lists
+        answer.add(firstSet);
+        answer.add(secondSet);
+        
+        return answer;
+    }
+}
