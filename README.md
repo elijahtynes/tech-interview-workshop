@@ -22,10 +22,10 @@ Below are the instructions for this assignment. Your repository should automatic
 
 ### 📝 TODO: Complete this section
 
-* **Your name and PID**:
+* **Your name and PID**: Elijah Tynes, elijaht
 
-* **Your partner's name and PID:**
+* **Your partner's name and PID:** Michael Pang, michaelp03
 
-* **Link to selected coding challenge:**
+* **Link to selected coding challenge:** https://leetcode.com/problems/find-the-difference-of-two-arrays/
 
-* **Summary of partner's interview feedback:**
+* **Summary of partner's interview feedback:** We both struggled to solve this problem.
